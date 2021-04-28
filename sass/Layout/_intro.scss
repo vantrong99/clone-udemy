@@ -1,0 +1,39 @@
+.intro {
+    background: linear-gradient(to left, #ec5252, #6e1a52);
+    .intro__content{
+        .intro__item{
+            i{
+                @include styleIcon($color-white-0,$fs-5);
+            }
+            h2{
+                @include styleText($color-white-0,$fs-2 - 3, $fw-bold-1);
+            }
+            p{
+                @include styleText($color-white-0,$fs-2 - 5, $fw-normal);
+                margin-bottom: 0;
+            }
+            text-align: left;
+            padding: $pd-2 0;
+        }
+    }
+}
+@include responsive("extra-large"){
+    .intro__content{
+        .intro__item{
+            
+            i{
+                display: none;
+            }
+            .col-12{
+                text-align: center;
+            }
+        }
+    }
+}
+@include responsive("medium"){
+    .intro__content{
+        .intro__item{
+            display: none;
+        }
+    }
+}

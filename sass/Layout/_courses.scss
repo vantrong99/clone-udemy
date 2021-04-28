@@ -1,0 +1,92 @@
+.courses {
+    .courses__content {
+        margin-top: 40px;
+        .left__content {
+            background: $color-gray-5;
+            padding: 130px 5px;
+            h3 {
+                @include styleText($color-black-0, $fs-2 - 1, $fw-bold-1);
+                line-height: 1.47;
+                margin-bottom: $mg-1;
+            }
+        }
+        .right__content {
+            .nav {
+                justify-content: center;
+                border: none;
+                .nav-item {
+                    &:hover {
+                        .nav-link {
+                            border: none;
+                        }
+                    }
+                    .nav-link.active {
+                        border: none;
+                        border-bottom: 5px solid $color-blue;
+                        padding-bottom: $mg-2;
+                    }
+                    .nav-link {
+                        @include styleText($color-black-0, $fs-0, $fw-normal);
+                        border: none;
+                    }
+                }
+            }
+            #myTab {
+                border-bottom: 1px solid #dedfe0;
+                width: 100%;
+            }
+            .tab-content {
+                position: relative;
+                margin-top: $mg-1;
+                .owl-carousel {
+                    .owl-nav.disabled {
+                        display: block;
+                    }
+                }
+                .right__item {
+                    .card {
+                        .card-title {
+                            @include styleText($color-black-0, $fs-0, $fw-bold-1);
+                        }
+                        .card-text {
+                            @include styleText($color-gray-4, $fs-1 - 1, $fw-normal);
+                        }
+                        .right__rating {
+                            display: flex;
+                            .rating__icon {
+                                @include styleText($color-yellow, $fs-1 - 1, $fw-normal);
+                                margin-right: $mg-0;
+                            }
+                            span:nth-child(2) {
+                                @include styleText($color-gray-4, $fs-1 - 1, $fw-bold-1);
+                                margin-right: $mg-0;
+                            }
+                            span:last-child {
+                                @include styleText($color-gray-4, $fs-1 - 1, $fw-normal);
+                            }
+                        }
+                        .right__price {
+                            text-align: right;
+                            .old__price {
+                                @include styleText($color-gray-4, $fs-1 - 1, $fw-normal);
+                                text-decoration: line-through;
+                            }
+                            .new__price {
+                                @include styleText($color-black-0, $fs-0, $fw-bold);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include responsive("extra-large"){
+    .courses{
+        .courses__content{
+            .left__content{
+                display: none;
+            }
+        }
+    }
+}

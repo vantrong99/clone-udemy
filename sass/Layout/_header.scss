@@ -1,0 +1,105 @@
+.header__left {
+    display: flex;
+    align-items: center;
+    @include styleText($color-black-light, $fs-1, $fw-normal);
+    .navbar-brand {
+        // flex-grow: 0;
+        img {
+            width: 110px;
+        }
+    }
+    .header__cate {
+        // flex-grow: 0;
+        margin-right: 5px;
+    }
+    .header__form {
+        flex-grow: 1;
+        .form-control {
+            background-color: $color-white-cream;
+            border: none;
+            transition: none;
+            @include styleText($color-black-light, $fs-1, $fw-normal);
+            &:focus {
+                background-color: $color-white-0;
+                box-shadow: none;
+                border: 1px solid $color-gray-6;
+                border-right: none;
+            }
+            &:focus + .input-group-append {
+                .input-group-text {
+                    background-color: $color-white-0;
+                    border: 1px solid $color-gray-6;
+                    border-left: none;
+                }
+                &:hover {
+                    .input-group-text {
+                        background-color: $color-red-0;
+                        @include styleText($color-white-0, $fs-1, $fw-normal);
+                    }
+                }
+            }
+        }
+        .input-group-append {
+            .input-group-text {
+                background-color: $color-white-cream;
+                border: none;
+                @include styleText($color-red-0, $fs-1, $fw-normal);
+            }
+            &:hover .input-group-text {
+                background-color: $color-red-0;
+                @include styleText($color-white-0, $fs-1, $fw-normal);
+            }
+        }
+    }
+}
+.header__right {
+    .navbar-nav {
+        width: 100%;
+        justify-content: space-between;
+        .nav-item {
+            .nav-link {
+                @include styleText($color-black-light, $fs-1, $fw-normal);
+                padding: 1rem;
+            }
+            // &:hover{
+            //     background-color: $color-white-cream;
+            //     border-radius: 3px;
+            // }
+        }
+        .shopping {
+            width: 50px;
+            height: 50px;
+            &:hover {
+                background-color: $color-white-cream;
+                border-radius: 50%;
+                border: 1px solid $color-gray-6;
+            }
+        }
+        
+        .business,
+        .teach {
+            &:hover {
+                background-color: $color-white-cream;
+                border-radius: 3px;
+            }
+        }
+    }
+}
+// responsive
+@include responsive("extra-large") {
+    .header__right {
+        .navbar-nav {
+            .business,
+            .teach {
+                display: none;
+            }
+        }
+    }
+}
+@include responsive("medium"){
+    .header__left{
+        .header__cate,.header__form{
+            display: none;
+        }
+    }
+}

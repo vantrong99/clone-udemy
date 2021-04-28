@@ -1,0 +1,88 @@
+.contact {
+    border-top: 1px solid $color-gray-6;
+    border-bottom: 1px solid $color-gray-6;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    .contact__content {
+        padding: 0 15px;
+        .row {
+            width: 100%;
+            .contact__item {
+                #item__focus {
+                    @include styleText($color-blue, $fs-1, $fw-bold-1);
+                    &:hover {
+                        color: $color-black-0;
+                    }
+                }
+                a {
+                    display: block;
+                    text-decoration: none;
+                    @include styleText($color-blue, $fs-1, $fw-normal);
+                    line-height: 30px;
+                    &:hover {
+                        color: $color-black-0;
+                    }
+                }
+            }
+            .contact__drop {
+                text-align: right;
+                .dropup {
+                    button {
+                        padding: 9px 26px 9px 10px;
+                        background-color: $color-white-0;
+                        border: 1px solid $color-black-0;
+                        i {
+                            font-size: 13px;
+                            color: $color-gray-4;
+                            margin: 0 $mg-1;
+                        }
+                        span {
+                            @include styleText($color-gray-4, $fs-1, $fw-bold-1);
+                            margin-right: 30px;
+                        }
+                        &:hover {
+                            border: 1px solid $color-black-0;
+                            i {
+                                color: $color-black-0;
+                            }
+                            span {
+                                color: $color-black-0;
+                            }
+                        }
+                        &:focus {
+                            border: 1px solid $color-black-0;
+                            outline: none;
+                            i {
+                                color: $color-black-0;
+                            }
+                            span {
+                                color: $color-black-0;
+                            }
+                        }
+                    }
+                    .dropdown-menu {
+                        .dropdown-item {
+                            padding: 4px 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include responsive("medium") {
+    .contact {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        .contact__content {
+            .row {
+                .contact__item {
+                    display: none;
+                }
+                .contact__drop {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

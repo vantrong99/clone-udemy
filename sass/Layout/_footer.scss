@@ -1,0 +1,44 @@
+footer{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 6px solid $color-red-0;
+    .footer__content{
+        padding: 0 20px;
+        .row{
+            .left__content{
+                img{
+                    width: 110px;
+                }
+                span{
+                    @include styleText($color-gray-4,$fs-1,$fw-normal);
+                    margin-left: 20px;
+                }
+            }
+            .right__content{
+                a{
+                    font-size: $fs-1;
+                    &:hover{
+                        text-decoration: none;
+                        color: $color-black-0;
+                    }
+                    margin-right: 20px;
+                }
+                text-align: right;
+            }
+        }
+    }
+}
+@include responsive("medium"){
+    footer{
+        padding: 20px 0;
+        .footer__content{
+            .row{
+                .right__content{
+                    text-align: left;
+                    padding: 20px 0;
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.topCate {
+    .topCate__content {
+        padding:40px 0;
+        h6 {
+            @include styleText($color-black-0, $fs-3, $fw-bold-1);
+        }
+        .cate__item {
+            margin: 8px 0;
+            padding-left: 15px;
+            padding-right: 15px;
+            .cate {
+                border: 1px solid #ddd;
+                display: flex;
+                padding: 15px;
+                box-shadow: 0 2px 4px 0 rgba(20, 23, 28, 0.2);
+                transition: all 0.5s;
+                i{
+                    font-size: 32px;
+                    color: $color-black-light;
+                    padding-right: 16px;
+                }
+                p{
+                    @include styleText($color-black-light,$fs-1 + 2, $fw-normal);
+                     line-height: 10px;
+                     margin: 0;
+                     line-height: 32px;
+                }
+                &:hover{
+                    cursor: pointer;
+                    box-shadow: 0 0 10px 3px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.service{
+    background-color: $color-white-cream;
+    width: 100%;
+    margin-right: $mg-2 ;
+    padding: $pd-2 0 ;
+    .service__content{
+        display: flex;
+        justify-content: center;
+        .service__item{
+            width: 33%;
+            border: 1px solid #e8e9eb;
+            padding: 24px;
+            margin-right: 16px;
+            background-color: $color-white-0;
+            i{
+                @include styleIcon($color-blue,$fs-4);
+            }
+            h4{
+                @include styleText($color-black-0,$fs-2 - 1, $fw-bold-1);
+            }
+            p{
+                @include styleText($color-gray-4,$fs-1 + 2, $fw-normal);
+            }
+            &:last-child{
+                margin-right: unset;
+            }
+        }
+    }
+}
+@include responsive("small"){
+    .service{
+        .service__content{
+            display: block;
+            .service__item{
+                width: 100%;
+            }
+        }
+    }
+}
